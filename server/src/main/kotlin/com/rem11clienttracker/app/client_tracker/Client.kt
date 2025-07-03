@@ -4,7 +4,7 @@ import jakarta.persistence.*
 //imports JPA java persistence API annotations for ORM object relational mapping
 
 
-@Entity //database entity class table
+@Entity //database class table
 @Table(name = "clients")
 //database name
 
