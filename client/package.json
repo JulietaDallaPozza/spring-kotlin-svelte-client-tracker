@@ -15,9 +15,18 @@
 		"@sveltejs/adapter-auto": "^6.0.0",
 		"@sveltejs/kit": "^2.16.0",
 		"@sveltejs/vite-plugin-svelte": "^5.0.0",
+		"@unocss/cli": "^66.3.2",
+		"@unocss/preset-attributify": "^66.3.2",
+		"@unocss/preset-icons": "^66.3.2",
+		"@unocss/preset-wind": "^66.3.2",
+		"@unocss/preset-wind3": "^66.3.2",
 		"svelte": "^5.0.0",
 		"svelte-check": "^4.0.0",
 		"typescript": "^5.0.0",
+		"unocss": "^66.3.2",
 		"vite": "^6.2.6"
+	},
+	"dependencies": {
+		"melte": "^2.0.9"
 	}
 }
