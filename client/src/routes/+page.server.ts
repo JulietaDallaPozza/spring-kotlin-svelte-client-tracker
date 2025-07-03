@@ -13,6 +13,8 @@ export const load: PageServerLoad = async ({ fetch }) => {
 //bc is a server-rendered fw load function is used to fecth data the page need before rendering
 //purpose data is available as soon as the page loads
 
+
+
 export const actions: Actions = {
   default: async ({ request, fetch }) => {
     const formData = await request.formData();
