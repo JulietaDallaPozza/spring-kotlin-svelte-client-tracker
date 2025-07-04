@@ -8,7 +8,7 @@
 </header> -->
 
 
-<main class="p-6">
+<main class="p-6 max-h-screen overflow-y-auto">
   <slot />
 </main>
 
