@@ -48,9 +48,10 @@
       </h2>
 
       {#if data.clients && data.clients.length > 0}
+      <div class="w-full max-w-4xl mx-auto">
         <ul class=" w-full">
           {#each data.clients as client}
-            <li class="py-3 flex items-center gap-1 justify-between">
+            <li class="flex flex-row justify-between items-center gap-2 py-3">
               <div class="flex items-center gap-1">
                 <span class="text-blue-800 text-xl"></span>
                 <div>
@@ -64,17 +65,19 @@
                   type="submit"
                   name="delete"
                   value="1"
-                  class="bg-transparent hover:bg-blue-500 text-white px-7 py-5 rounded"
+                  class="bg-blue-500 hover:bg-blue-600 text-white p-2 rounded"
                   aria-label="Delete client"
                   title="Delete"
-                ></button>
+                >
+                  🗑️
+                </button>
               </form>
             </li>
           {/each}
         </ul>
+        </div>
       {:else}
-        <p class="">
-          <span class=""></span>
+        <p class="text-sm text-red-500">
           No clients found
         </p>
       {/if}
