@@ -1,16 +1,18 @@
 <script>
 </script>
 
-<header class="bg-blue-600 text-white p-4">
+<!-- <header class=" text-blue-600 p-4 border border-solid border-blue-500 rounded-xl p-6rounded-xl shadow-inner p-6 p-6 w-full flex flex-col items-center"
+>
     <h1>Client Manager</h1>
 
-</header>
+</header> -->
+
 
 <main class="p-6">
   <slot />
 </main>
 
-<footer class="text-center text-gray-500 mt-10 mb-4">
+<footer class="text-center text-blue-500 mt-10 mb-4">
   © 2025 Client App Tracker Company
 </footer>
 
