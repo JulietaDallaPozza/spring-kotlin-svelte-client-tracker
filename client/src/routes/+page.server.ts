@@ -9,14 +9,12 @@ export const load: PageServerLoad = async ({ fetch }) => {
   return { clients };
 };
 
-//load function**fetches a list of clients from the api before the page is rendered 
+//load function**fetches a list of clients from the api before the page is rendered
 //bc is a server-rendered fw load function is used to fecth data the page need before rendering
 //purpose data is available as soon as the page loads
 
-
-
 export const actions: Actions = {
-  default: async ({ request, fetch }) => {
+  add: async ({ request, fetch }) => {
     const formData = await request.formData();
     const data = {
       name: formData.get("name"),
@@ -31,6 +29,24 @@ export const actions: Actions = {
 
     if (!res.ok) {
       return { error: "Failed to add client" };
+    }
+
+    return { success: true };
+  },
+
+  delete: async ({ request, fetch }) => {
+    const formData = await request.formData();
+    const id = formData.get("id");
+    console.log("Deleting client with id:", id);
+
+    if (!id) return { error: "No client ID" };
+
+    const res = await fetch(`${API_BASE}/${id}`, {
+      method: "DELETE",
+    });
+
+    if (!res.ok) {
+      return { error: "Failed to delete client" };
     }
 
     return { success: true };

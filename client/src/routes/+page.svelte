@@ -46,6 +46,7 @@
     <form
       method="POST"
       use:enhance
+      action="?/add"
       class="flex flex-col items-center gap-4 mb-8"
     >
       <input
@@ -75,22 +76,32 @@
       <h2
         class="text-lg font-semibold text-gray-600 mb-3 flex items-center gap-2 justify-center"
       >
-<div class="border border-solid border-red-500 rounded-xl p-6">
-  This box should have a red border.
-</div>
-
         <span class="i-carbon-list text-violet-500"></span> Client List
       </h2>
+
       {#if data.clients && data.clients.length > 0}
         <ul class="divide-y divide-gray-200 w-full">
           {#each data.clients as client}
-            <li class="py-3 flex items-center gap-3">
-              <span class="i-carbon-user-avatar-filled text-blue-400 text-xl"
-              ></span>
-              <div>
-                <div class="font-medium text-gray-800">{client.name}</div>
-                <div class="text-sm text-gray-500">{client.email}</div>
+            <li class="py-3 flex items-center gap-3 justify-between">
+              <div class="flex items-center gap-3">
+                <span class="i-carbon-user-avatar-filled text-blue-400 text-xl"
+                ></span>
+                <div>
+                  <div class="font-medium text-gray-800">{client.name}</div>
+                  <div class="text-sm text-gray-500">{client.email}</div>
+                </div>
               </div>
+              <form method="POST" use:enhance action="?/delete"> 
+                <input type="hidden" name="id" value={client.id} />
+                <button
+                  type="submit"
+                  name="delete"
+                  value="1"
+                  class="i-carbon-trash-can text-red-500 hover:text-red-700 text-2xl transition"
+                  aria-label="Delete client"
+                  title="Delete"
+                ></button>
+              </form>
             </li>
           {/each}
         </ul>
