@@ -1,11 +1,18 @@
 import type { Actions, PageServerLoad } from "./$types";
+import { redirect } from "@sveltejs/kit";
 //typescripts types from local module "types" pageserverload a type for functions that load data on the server before rendering a page**
 // //a type for an object that defines server side actions (handling froms submissions)
 const API_BASE = "http://localhost:8080/api/clients";
 
 export const load: PageServerLoad = async ({ fetch }) => {
-  const res = await fetch(API_BASE);
+  const res = await fetch(API_BASE, {
+    headers: {
+      "cache-control": "no-store",
+    },
+  });
+
   const clients = await res.json();
+  console.log("Server-loaded clients:", clients);
   return { clients };
 };
 
@@ -31,7 +38,7 @@ export const actions: Actions = {
       return { error: "Failed to add client" };
     }
 
-    return { success: true };
+    throw redirect(303, "/");
   },
 
   delete: async ({ request, fetch }) => {
@@ -49,7 +56,7 @@ export const actions: Actions = {
       return { error: "Failed to delete client" };
     }
 
-    return { success: true };
+    throw redirect(303, "/");
   },
 };
 

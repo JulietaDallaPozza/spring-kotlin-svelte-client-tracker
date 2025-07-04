@@ -1,5 +1,5 @@
 package com.rem11clienttracker.app.client_tracker
-
+import org.springframework.http.ResponseEntity
 import org.springframework.web.bind.annotation.*
 //Model-View-Controller**design pattern used to organize and structure on spring framework
 
@@ -16,4 +16,14 @@ class ClientController(private val repository: ClientRepository) {
 
     @PostMapping    //POST request to api clients
     fun addClient(@RequestBody client: Client) = repository.save(client) //save new clients as json in database and returns 
+
+@DeleteMapping("/{id}")
+fun deleteClient(@PathVariable id: Long): ResponseEntity<Void> {
+    if (!repository.existsById(id)) {
+        return ResponseEntity.notFound().build()// “Return a 200 OK with no body.”
+    }
+    repository.deleteById(id)
+    return ResponseEntity.ok().build()//“Return a 200 OK with no body.”
+}
+//spring class to customize http responses status codes and headers 
 }

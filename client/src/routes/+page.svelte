@@ -30,8 +30,10 @@
 {/if} -->
 
 <script lang="ts">
-  import { enhance } from "$app/forms";
+  // import { enhance } from "$app/forms";
   export let data;
+  console.log(data.clients);
+
 </script>
 
 <div class="min-h-screen bg-gray-100 flex items-center justify-center">
@@ -43,9 +45,9 @@
       <h1 class="text-2xl font-bold text-gray-800 mt-2">Clients App Tracker</h1>
     </div>
 
+<!-- add client form  -->
     <form
       method="POST"
-      use:enhance
       action="?/add"
       class="flex flex-col items-center gap-4 mb-8"
     >
@@ -91,7 +93,7 @@
                   <div class="text-sm text-gray-500">{client.email}</div>
                 </div>
               </div>
-              <form method="POST" use:enhance action="?/delete"> 
+              <form method="POST"  action="?/delete"> 
                 <input type="hidden" name="id" value={client.id} />
                 <button
                   type="submit"
