@@ -2,7 +2,8 @@
 </script>
 
 <header class="bg-blue-600 text-white p-4">
-  <h1>Client Manager</h1>
+    <h1>Client Manager</h1>
+
 </header>
 
 <main class="p-6">
