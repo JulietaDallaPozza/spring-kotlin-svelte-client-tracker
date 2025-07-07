@@ -6,9 +6,7 @@ const API_BASE = "http://localhost:8080/api/clients";
 
 export const load: PageServerLoad = async ({ fetch }) => {
   const res = await fetch(API_BASE, {
-    headers: {
-      "cache-control": "no-store",
-    },
+  
   });
 
   const clients = await res.json();

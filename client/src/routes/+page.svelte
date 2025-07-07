@@ -1,10 +1,11 @@
 <script lang="ts">
-  // import { enhance } from "$app/forms";
   export let data;
   console.log(data.clients);
 </script>
 
+
 <div class="max-h-screen flex items-center justify-center">
+  
   <div
     class="bg-white rounded-2xl p-8 max-w-md w-full flex flex-col items-center"
   >
