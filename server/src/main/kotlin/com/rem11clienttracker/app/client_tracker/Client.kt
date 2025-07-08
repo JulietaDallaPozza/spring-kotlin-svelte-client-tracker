@@ -1,10 +1,11 @@
-package com.rem11clienttracker.app.client_tracker
-
+package com.rem11clienttracker.app.client_tracker 
+//package file belogns to,,,helps organize code avoid name errors
 import jakarta.persistence.*
+//classes and annotations from the jakarta package
 //imports JPA java persistence API annotations for ORM object relational mapping
 
 
-@Entity //database class table
+@Entity //database class,,,client is now database entity
 @Table(name = "clients")
 //database name
 
