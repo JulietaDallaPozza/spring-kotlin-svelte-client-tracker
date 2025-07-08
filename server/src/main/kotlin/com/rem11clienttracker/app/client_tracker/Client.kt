@@ -9,11 +9,12 @@ import jakarta.persistence.*
 //database name
 
 data class Client(
-    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Id @GeneratedValue(strategy = GenerationType.IDENTITY) 
+    //identity strategy the database auto generates the id for each new client
+    //sequence generation types are ways JPA can auto generate unique IDs for your entities
     //constants variables
     val id: Long = 0,
     val name: String,
     val email: String
 )
 
-//sequensgenerations types

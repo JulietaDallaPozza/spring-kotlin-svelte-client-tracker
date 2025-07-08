@@ -13,7 +13,6 @@
       <h1 class="mt-2 font-semibold text-blue-700">Clients App Tracker</h1>
     </div>
 
-    <!-- add client form  -->
     <form
       method="POST"
       action="?/add"
@@ -34,7 +33,7 @@
       />
       <button
         type="submit"
-        class="w-72 bg-blue-500 text-white px-4 py-2 rounded font-semibold hover:bg-blue-600 transition flex items-center justify-center gap-2"
+        class="w-72 bg-blue-500 text-white px-4 py-2 rounded font-semibold hover:bg-blue-600 transition flex items-center justify-center gap-2 i-mdi-star h-50 w-50"
       >
         Add Client
       </button>
@@ -66,11 +65,11 @@
                   type="submit"
                   name="delete"
                   value="1"
-                  class="bg-blue-500 hover:bg-blue-600 text-white p-2 rounded"
+                  class="bg-blue-500 hover:bg-blue-600 text-white p-2 rounded i-mdi-delete h-6 w-6"
                   aria-label="Delete client"
                   title="Delete"
                 >
-                  🗑️
+                  
                 </button>
               </form>
             </li>
