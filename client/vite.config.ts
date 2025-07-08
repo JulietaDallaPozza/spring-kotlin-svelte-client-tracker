@@ -10,3 +10,5 @@ export default defineConfig({
       ],
   }), sveltekit() ],
 });
+
+//functions returning plugins 
